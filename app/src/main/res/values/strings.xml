@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">mobile_app_hw1</string>
+    <string name="welcome_back">Welcome back</string>
+    <string name="sign_in">Sign in to access your account</string>
+    <string name="email_hint">Enter your email</string>
+    <string name="password_hint">Password</string>
+    <string name="remember_me">Remember me</string>
+    <string name="forget_password">Forget password?</string>
+    <string name="next">Next</string>
+    <string name="new_member">New Member? </string>
+    <string name="register">Register now</string>
 </resources>
