@@ -16,23 +16,21 @@
 
     <TextView
         android:id="@+id/headerText"
+        style="@style/HeaderText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="130dp"
-        android:layout_marginEnd="70dp"
         android:text="@string/get_started"
-        android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/subText"
+        style="@style/SubText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="55dp"
         android:text="@string/free_account"
-        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/headerText" />
@@ -138,11 +136,11 @@
 
     <Button
         android:id="@+id/buttonNext"
+        style="@style/ButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:text="@string/next"
-        style="@style/buttonStyle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -158,12 +156,11 @@
         app:layout_constraintTop_toBottomOf="@+id/buttonNext" />
 
     <TextView
-        android:id="@+id/registerText"
+        android:id="@+id/loginText"
+        style="@style/RegisterLoginText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/login"
-        android:textColor="#6C63FF"
-        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/newMemberText"
         app:layout_constraintTop_toBottomOf="@+id/buttonNext" />
 

@@ -18,24 +18,21 @@
 
     <TextView
         android:id="@+id/headerText"
+        style="@style/HeaderText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="130dp"
-        android:layout_marginEnd="70dp"
         android:text="@string/welcome_back"
-        android:textSize="26sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/subText"
+        style="@style/SubText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="10dp"
         android:paddingEnd="50dp"
         android:text="@string/sign_in"
-        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/headerText" />
@@ -93,7 +90,7 @@
 
     <Button
         android:id="@+id/buttonNext"
-        style="@style/buttonStyle"
+        style="@style/ButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="150dp"
@@ -118,12 +115,11 @@
 
     <TextView
         android:id="@+id/registerText"
+        style="@style/RegisterLoginText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:text="@string/register"
-        android:textColor="#6C63FF"
-        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/newMember"
         app:layout_constraintTop_toBottomOf="@id/buttonNext" />
 
