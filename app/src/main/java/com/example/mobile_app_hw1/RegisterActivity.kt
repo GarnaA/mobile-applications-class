@@ -14,7 +14,7 @@ class RegisterActivity : AppCompatActivity() {
         signInLabel.setOnClickListener {
             val goToSignInIntent = Intent(this@RegisterActivity, SignInActivity::class.java)
             goToSignInIntent.setFlags(
-                Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
             )
             startActivity(goToSignInIntent)
         }
