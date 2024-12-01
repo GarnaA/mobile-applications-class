@@ -17,14 +17,12 @@ class CredentialsManager {
         val regex = Regex(emailPattern)
         return regex.matches(mail) || mail=="test@te.st"
     }
-
-
     fun isPasswordValid(password: String): Boolean {
         val regex = Regex(passwordPattern)
         return regex.matches(password) || password == "1234"
     }
 
     fun login(email:String, password: String): Boolean{
-        return email == "Test@te.st" && password == "1234"
+        return email == "test@te.st" && password == "1234"
     }
 }

@@ -54,8 +54,6 @@ class SignInActivity : AppCompatActivity() {
 
     }
 
-
-
     private fun login(email:String,password:String){
         val buttonLogin = findViewById<Button>(R.id.buttonNext)
         val loginErrorPopup = Snackbar.make(buttonLogin,"Wrong email or password",10000)
