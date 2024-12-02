@@ -90,7 +90,7 @@ class CredentialsManagerTest {
     }
 
     @Test
-    fun checkout() {
+    fun givenRegisteredEmailWithDifferentCase_thenLoginSuccessfully() {
         val credentialsManager = CredentialsManager.instance
 
         credentialsManager.register("another@gmail.com", "!Email15102014")
