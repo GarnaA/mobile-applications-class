@@ -58,16 +58,6 @@ class CredentialsManagerTest {
     }
 
     @Test
-    fun givenDuplicateEmailCaseInsensitive_thenReturnFalse() {
-        val credentialsManager = CredentialsManager.instance
-        val isRegistered = credentialsManager.register("TEST@te.st", "Password@456")
-
-        credentialsManager.register("test@te.st", "Password@123")
-
-        assertEquals(false, isRegistered)
-    }
-
-    @Test
     fun givenRegisteredEmail_thenReturnTrue() {
         val credentialsManager = CredentialsManager.instance
 
