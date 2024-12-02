@@ -28,7 +28,7 @@ class SignInActivity : AppCompatActivity() {
         val emailLayout = findViewById<TextInputLayout>(R.id.emailInput)
         val passwordLayout = findViewById<TextInputLayout>(R.id.passwordInput)
         val buttonLogin = findViewById<Button>(R.id.buttonNext)
-        val credentialManager = CredentialsManager()
+        val credentialManager = CredentialsManager.instance
 
         buttonLogin.setOnClickListener {
             val email = emailText.text.toString()
@@ -51,7 +51,6 @@ class SignInActivity : AppCompatActivity() {
 
             login(email,password)
         }
-
     }
 
     private fun login(email:String,password:String){
@@ -59,14 +58,14 @@ class SignInActivity : AppCompatActivity() {
         val loginErrorPopup = Snackbar.make(buttonLogin,"Wrong email or password",10000)
         val goToMainActivity = Intent(this@SignInActivity,MainActivity::class.java)
 
-        if(CredentialsManager().login(email,password)){
+        if(CredentialsManager.instance.login(email,password)){
             goToMainActivity.setFlags(
                 Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
             )
             startActivity(goToMainActivity)
         }
         else{
-            buttonLogin.setError("Wrong password or email!")
+            buttonLogin.error = "Wrong password or email!"
             loginErrorPopup.show()
         }
     }
