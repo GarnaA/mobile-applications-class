@@ -12,17 +12,17 @@
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:name="com.example.mobile_app_hw1.FragmentA"
-       />
+        android:name="com.example.mobile_app_hw1.FragmentA" />
 
     <Button
         android:id="@+id/switch_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Switch Fragment"
+        android:text="@string/switch_fragment"
         android:textSize="22sp"
         android:layout_marginBottom="34dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
