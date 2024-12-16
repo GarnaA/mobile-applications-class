@@ -1,5 +1,6 @@
 package com.example.mobile_app_hw1
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,18 +12,19 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
+import com.google.firebase.firestore.EventListener
 
 class SignInFragment : Fragment() {
 
-    companion object {
-        fun newInstance(): SignInFragment = SignInFragment()
-    }
+    private var parentActivity: FragmentsActivity? = null
 
-    private lateinit var credentialManager: CredentialsManager
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        credentialManager = (activity as FragmentsActivity).getCredentialsManager()
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        if (context is FragmentsActivity) {
+            parentActivity = context
+        } else {
+            throw IllegalStateException("$context must be an instance of FragmentsActivity")
+        }
     }
 
     override fun onCreateView(
@@ -70,5 +72,10 @@ class SignInFragment : Fragment() {
         }
 
         return view
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        parentActivity = null
     }
 }

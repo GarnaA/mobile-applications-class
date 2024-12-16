@@ -24,14 +24,16 @@ object CredentialsManager {
     }
 
     fun register(email: String, password: String): Boolean {
-        if (isEmailValid(email) && isPasswordValid(password)) {
-            credentialsMap[email] = password
+        val normalizedEmail = email.lowercase()
+        if (isEmailValid(normalizedEmail) && isPasswordValid(password)) {
+            credentialsMap[normalizedEmail] = password
             return true
         }
         return false
     }
 
     fun login(email: String, password: String): Boolean {
-        return credentialsMap[email] == password
+        val normalizedEmail = email.lowercase()
+        return credentialsMap[normalizedEmail] == password
     }
 }

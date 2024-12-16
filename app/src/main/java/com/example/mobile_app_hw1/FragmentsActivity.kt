@@ -14,22 +14,23 @@ class FragmentsActivity : FragmentActivity() {
         setContentView(R.layout.activity_fragments)
 
         if (savedInstanceState == null) {
-            showFragment(SignInFragment.newInstance())
+            showFragment(SignInFragment())
         }
     }
 
     private fun showFragment(fragment: Fragment) {
         supportFragmentManager.commit {
             replace(R.id.fragmentsActivity, fragment)
+            addToBackStack(null)
         }
     }
 
     fun navigateToRegister() {
-        showFragment(RegisterFragment.newInstance())
+        showFragment(RegisterFragment())
     }
 
     fun navigateToLogin() {
-        showFragment(SignInFragment.newInstance())
+        showFragment(SignInFragment())
     }
 
     fun getCredentialsManager(): CredentialsManager {

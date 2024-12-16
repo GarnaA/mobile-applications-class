@@ -1,5 +1,6 @@
 package com.example.mobile_app_hw1
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,15 +14,15 @@ import com.google.android.material.textfield.TextInputLayout
 
 class RegisterFragment : Fragment() {
 
-    companion object {
-        fun newInstance(): RegisterFragment = RegisterFragment()
-    }
+    private var parentActivity: FragmentsActivity? = null
 
-    private lateinit var credentialManager: CredentialsManager
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        credentialManager = (activity as FragmentsActivity).getCredentialsManager()
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        if (context is FragmentsActivity) {
+            parentActivity = context
+        } else {
+            throw IllegalStateException("$context must be an instance of FragmentsActivity")
+        }
     }
 
     override fun onCreateView(
@@ -69,5 +70,10 @@ class RegisterFragment : Fragment() {
 
 
         return view
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        parentActivity = null
     }
 }
