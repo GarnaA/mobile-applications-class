@@ -39,12 +39,12 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/nameInput"
+        style="@style/InputStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/name_input"
-        android:layout_marginEnd="20dp"
         android:layout_marginStart="20dp"
-        style="@style/InputStyle"
+        android:layout_marginEnd="20dp"
+        android:hint="@string/name_input"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logoImage">
@@ -58,10 +58,10 @@
         android:id="@+id/emailInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
-        android:hint="@string/email_valid_hint"
-        android:layout_marginEnd="20dp"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="20dp"
+        android:hint="@string/email_valid_hint"
         android:inputType="textEmailAddress"
         app:boxBackgroundColor="#ECECEC"
         app:layout_constraintEnd_toEndOf="parent"
@@ -78,10 +78,10 @@
         android:id="@+id/phoneNumberInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
-        android:hint="@string/phone_hint"
-        android:layout_marginEnd="20dp"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="20dp"
+        android:hint="@string/phone_hint"
         android:inputType="phone"
         app:boxBackgroundColor="#ECECEC"
         app:layout_constraintEnd_toEndOf="parent"
@@ -97,10 +97,10 @@
         android:id="@+id/passwordInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
-        android:hint="@string/passwd_strong_hint"
-        android:layout_marginEnd="20dp"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="20dp"
+        android:hint="@string/passwd_strong_hint"
         android:inputType="textPassword"
         app:boxBackgroundColor="#ECECEC"
         app:layout_constraintEnd_toEndOf="parent"
@@ -154,7 +154,7 @@
             android:textStyle="bold" />
     </LinearLayout>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonNext"
         style="@style/ButtonStyle"
         android:layout_width="match_parent"

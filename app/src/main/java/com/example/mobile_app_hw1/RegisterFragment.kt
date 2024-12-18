@@ -61,7 +61,11 @@ class RegisterFragment : Fragment() {
             }
 
             if (CredentialsManager.register(email, password)) {
-                Snackbar.make(view, "Registration Successful! You can now log in.", Snackbar.LENGTH_SHORT).show()
+                Snackbar.make(
+                    view,
+                    "Registration Successful! You can now log in.",
+                    Snackbar.LENGTH_SHORT
+                ).show()
                 (activity as FragmentsActivity).navigateToLogin()
             } else {
                 Snackbar.make(view, "Registration Failed!", Snackbar.LENGTH_SHORT).show()
