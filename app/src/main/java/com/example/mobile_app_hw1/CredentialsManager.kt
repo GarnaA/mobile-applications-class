@@ -1,6 +1,7 @@
 package com.example.mobile_app_hw1
 
-class CredentialsManager private constructor() {
+object CredentialsManager {
+
     private val emailPattern = ("[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}" +
             "\\@" +
             "[a-zA-Z0-9\\-]{0,64}" +
@@ -11,10 +12,6 @@ class CredentialsManager private constructor() {
     private val passwordPattern = ("^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[#?!@%^&*-]).{8,}$")
 
     private val credentialsMap = mutableMapOf<String, String>()
-
-    init {
-        credentialsMap["test@te.st".lowercase()] = "1234"
-    }
 
     fun isEmailValid(mail: String): Boolean {
         val regex = Regex(emailPattern)
@@ -27,20 +24,16 @@ class CredentialsManager private constructor() {
     }
 
     fun register(email: String, password: String): Boolean {
-        val lowerEmail = email.lowercase()
-        if (credentialsMap.containsKey(lowerEmail)) {
-            return false
+        val normalizedEmail = email.lowercase()
+        if (isEmailValid(normalizedEmail) && isPasswordValid(password)) {
+            credentialsMap[normalizedEmail] = password
+            return true
         }
-        credentialsMap[lowerEmail] = password
-        return true
+        return false
     }
 
     fun login(email: String, password: String): Boolean {
-        val lowerEmail = email.lowercase()
-        return credentialsMap[lowerEmail] == password
-    }
-
-    companion object {
-        val instance: CredentialsManager by lazy { CredentialsManager() }
+        val normalizedEmail = email.lowercase()
+        return credentialsMap[normalizedEmail] == password
     }
 }
