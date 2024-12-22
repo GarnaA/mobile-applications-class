@@ -24,4 +24,7 @@
     <string name="switch_fragment">Switch Fragment</string>
     <string name="fragment_a">Fragment A</string>
     <string name="fragment_b">Fragment B</string>
+    <string name="titleRecipe">Recipe Title</string>
+    <string name="buttonLike">Like</string>
+    <string name="buttonShare">Share</string>
 </resources>
