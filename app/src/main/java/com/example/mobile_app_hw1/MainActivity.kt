@@ -1,7 +1,6 @@
 package com.example.mobile_app_hw1
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -28,12 +27,10 @@ class MainActivity : AppCompatActivity() {
         val adapter = RecipeAdapter(
             recipes,
             itemClickListener = { recipe ->
-                Toast.makeText(this, "Clicked: ${recipe.title}", Toast.LENGTH_SHORT).show()
-                Log.d("Item Clicked", "${recipe.id}")
+                Toast.makeText(this, "Clicked ID: ${recipe.id}", Toast.LENGTH_SHORT).show()
             },
             actionClickListener = { recipe, action ->
-                Toast.makeText(this, "$action clicked: ${recipe.title}", Toast.LENGTH_SHORT).show()
-                Log.d("Action Clicked", "$action clicked: ${recipe.id}")
+                Toast.makeText(this, "$action clicked, ID: ${recipe.id}", Toast.LENGTH_SHORT).show()
             }
         )
 
