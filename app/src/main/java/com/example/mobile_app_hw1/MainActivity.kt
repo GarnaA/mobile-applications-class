@@ -23,9 +23,10 @@ class MainActivity : AppCompatActivity() {
 
         val recyclerView: RecyclerView = findViewById(R.id.recycler_view)
         val searchView: androidx.appcompat.widget.SearchView = findViewById(R.id.searchView)
+        val divider = DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
+
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        val divider = DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
         recyclerView.addItemDecoration(divider)
 
         val adapter = RecipeAdapter(
@@ -48,7 +49,8 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        searchView.setOnQueryTextListener(object : androidx.appcompat.widget.SearchView.OnQueryTextListener {
+        searchView.setOnQueryTextListener(object :
+            androidx.appcompat.widget.SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 return true
             }

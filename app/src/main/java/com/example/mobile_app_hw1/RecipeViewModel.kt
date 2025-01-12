@@ -8,13 +8,13 @@ import kotlinx.coroutines.launch
 
 class RecipeViewModel : ViewModel() {
 
-    private val originalRecipes = listOf(
+    private val allRecipes = listOf(
         Recipe(1, "STEAK", imageUrl = R.drawable.steak),
         Recipe(2, "KHINKALI", imageUrl = R.drawable.khinkali),
         Recipe(3, "KHACHAPURI", imageUrl = R.drawable.khachapuri)
     )
 
-    private val _recipes = MutableStateFlow(originalRecipes)
+    private val _recipes = MutableStateFlow(allRecipes)
     val recipes: StateFlow<List<Recipe>> get() = _recipes
 
     private var lastQuery: String = ""
@@ -24,9 +24,9 @@ class RecipeViewModel : ViewModel() {
 
         viewModelScope.launch {
             val filtered = if (query.length < 3) {
-                originalRecipes
+                allRecipes
             } else {
-                originalRecipes.filter { it.title.contains(query, ignoreCase = true) }
+                allRecipes.filter { it.title.contains(query, ignoreCase = true) }
             }
             if (_recipes.value != filtered) {
                 _recipes.value = filtered
