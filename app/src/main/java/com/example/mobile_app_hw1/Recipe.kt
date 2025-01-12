@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
 class RecipeAdapter(
-    private val recipes: List<Recipe>,
+    private var recipes: List<Recipe>,
     private val itemClickListener: (Recipe) -> Unit,
     private val actionClickListener: (Recipe, String) -> Unit
 ) : RecyclerView.Adapter<RecipeAdapter.RecipeViewHolder>() {
@@ -50,4 +50,9 @@ class RecipeAdapter(
     }
 
     override fun getItemCount(): Int = recipes.size
+
+    fun submitList(newRecipes: List<Recipe>) {
+        recipes = newRecipes
+        notifyDataSetChanged()
+    }
 }
