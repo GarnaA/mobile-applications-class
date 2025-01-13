@@ -44,6 +44,7 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation ("androidx.fragment:fragment-ktx:1.8.5")
     implementation(libs.firebase.firestore.ktx)
+    implementation(libs.androidx.lifecycle.runtime.android)
     testImplementation("junit:junit:4.13.2")
     testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
     androidTestImplementation("androidx.test.ext:junit:1.2.1")
