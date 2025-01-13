@@ -22,11 +22,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val recyclerView: RecyclerView = findViewById(R.id.recycler_view)
-        val searchView: androidx.appcompat.widget.SearchView = findViewById(R.id.searchView)
+        val searchView = findViewById<androidx.appcompat.widget.SearchView>(R.id.searchView)
+        searchView.setIconifiedByDefault(false)
         val divider = DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
 
         recyclerView.layoutManager = LinearLayoutManager(this)
-
         recyclerView.addItemDecoration(divider)
 
         val adapter = RecipeAdapter(
